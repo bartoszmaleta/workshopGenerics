@@ -27,7 +27,7 @@ package warsztatywprowadzajace;
  */
 public class Zadanie4 {
 
-    interface Klonable<T> {
+    interface Klonable<T extends Klonable<T>> {
         T klonuj();
     }
 
@@ -54,8 +54,8 @@ public class Zadanie4 {
         System.out.println(klonujWokalistę(new ElvisPresley()));
     }
 
-    private static Klonable klonujWokalistę(Klonable klonable) {
-        return (Klonable) klonable.klonuj();
+    private static <T extends Wokalista & Klonable> Klonable klonujWokalistę(T klonable) {
+        return klonable.klonuj();
         /*
         Popatrz na to rzutowanie. Po kiego grzyba ono tu jest?
         Jak je usuniesz, to dostaniesz błąd. Zrób to, i przeczytaj opis błędu.
