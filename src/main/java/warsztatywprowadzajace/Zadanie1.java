@@ -17,6 +17,7 @@ import java.util.List;
  * </ol>
  *
  * @author Wojciech Makiela
+ * Initial commit
  */
 public class Zadanie1 {
 
@@ -55,14 +56,17 @@ public class Zadanie1 {
 
     static void modernJavaStyle() {
         // Stwórz listę parametryzowaną typem 'String' i nazwij ją 'strings'
+        List<String> strings = new ArrayList<>();
+
 
 
         // Dodaj elementy: 'pierwszy' i 'drugi'
-
+        strings.add("pierwszy");
+        strings.add("drugi");
 
         // Dodaj elementy: 3
         // Podjęcie się takiej próby poskutkuje błędem kompilacji. Przeczytaj treść i zakomentuj problematyczną linijkę.
-
+//        strings.add(3);
 
         // Wyciągnij pierwszy element z listy, i przypisz go do zmiennej typu 'String'
 
