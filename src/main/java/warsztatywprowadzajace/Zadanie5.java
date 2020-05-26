@@ -36,11 +36,15 @@ public class Zadanie5 {
         }
     }
 
-    private static void wyświetlWokalistów(List<Wokalista> wokaliści) {
+    private static void wyświetlWokalistów(List<? extends Wokalista> wokaliści) {
         for (Wokalista wokalista : wokaliści) {
             System.out.println(wokalista);
         }
+
+//        wokaliści.add((null));    // could add! even if List<?>
+
     }
+
 
     public static void main(String[] args) {
         List<Wokalista> jacyśWokaliści = Arrays.asList(
@@ -49,7 +53,7 @@ public class Zadanie5 {
         wyświetlWokalistów(jacyśWokaliści);
 
         List<ElvisPresley> listaZPresleyem = Arrays.asList(new ElvisPresley());
-//        wyświetlWokalistów(listaZPresleyem);
+        wyświetlWokalistów(listaZPresleyem);
 
         /*
         Masz listę jakichś wokalistów. Wrzucasz ją do 'wyświetlWokalistów' i wszystko działa.
