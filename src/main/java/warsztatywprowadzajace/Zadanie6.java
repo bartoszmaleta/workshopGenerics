@@ -37,7 +37,7 @@ public class Zadanie6 {
         }
     }
 
-    private static void róbCośZWokalistami(List<? extends Wokalista> wokaliści, Consumer<Wokalista> consumer) {
+    private static void róbCośZWokalistami(List<? extends Wokalista> wokaliści, Consumer<? super Wokalista> consumer) {
         for (Wokalista wokalista : wokaliści) {
             consumer.accept(wokalista);
         }
@@ -51,7 +51,7 @@ public class Zadanie6 {
 
         // No ale jest problem. Oczywiście, że jest jakiś problem...
         Consumer<Object> print = System.out::println;
-        //        róbCośZWokalistami(wokaliści, print); // Błąd kompilacji.
+        róbCośZWokalistami(wokaliści, print); // Błąd kompilacji.
 
         /*
         Metoda `róbCośZWokalistami` przyjmuje konsumenta wokalistów, a nie konsumenta obiektów.
