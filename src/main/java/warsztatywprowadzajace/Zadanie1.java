@@ -69,6 +69,7 @@ public class Zadanie1 {
 //        strings.add(3);
 
         // Wyciągnij pierwszy element z listy, i przypisz go do zmiennej typu 'String'
+        String s = strings.get(0);
 
 
     }
