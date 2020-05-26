@@ -1,5 +1,8 @@
 package warsztatywprowadzajace;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <h1>Generyki - wprowadzenie praktyczne.</h1>
  * <p>W tej części zajmiesz się rozszerzeniem klasy Zadanie2.</p>
@@ -10,18 +13,23 @@ package warsztatywprowadzajace;
  *
  * @author Wojciech Makiela
  */
-public class Zadanie2<T> {
+public class Zadanie2<T, S> {
 
     // TODO - pole typu S
     final T poleTypuT;
+    final S poleTypuS;
 
     public static void main(String[] args) {
-        Zadanie2<String> stringZadanie2 = new Zadanie2<String>("Hello");
+        Zadanie2<String, String> stringZadanie2 = new Zadanie2<>("Hello", "World");
     }
 
     // TODO - popraw konstruktor. Ma przyjmować 2 zmienne - 1 typu T i 1 typu S
-    public Zadanie2(T zmiennaTypuT) {
+    public Zadanie2(T zmiennaTypuT, S zmiennaTypuS) {
         this.poleTypuT = zmiennaTypuT;
+        this.poleTypuS = zmiennaTypuS;
+//        T[] ts = new T[10];
+//        List<T>[] ts = new ArrayList<>[10];
+
     }
 
     /*
@@ -33,8 +41,28 @@ public class Zadanie2<T> {
 }
 
 
-class Wór {
+class Wór<T, S> {
+    T t;
+    S s;
+    List<String> strings;
 
+    public Wór(T t, S s, List<String> strings) {
+        this.t = t;
+        this.s = s;
+        this.strings = strings;
+    }
+
+    public T getT() {
+        return t;
+    }
+
+    public S getS() {
+        return s;
+    }
+
+    public List<String> getStrings() {
+        return strings;
+    }
     /*
     Następne zadanie - klasa Wór - szybka powtórka z tworzenia klas generycznych.
 
